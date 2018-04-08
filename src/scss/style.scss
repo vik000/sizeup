@@ -1,0 +1,17 @@
+//dependencies:
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/font-awesome/scss/font-awesome.scss';
+
+//base:
+@import 'variables.scss';
+@import 'mixins.scss';
+
+//layouts:
+@import 'header.scss';
+@import 'footer.scss';
+@import 'nav';
+
+//modules:
+body {
+  background-color: $background-color;
+}
