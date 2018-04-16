@@ -10,17 +10,18 @@ var notify = require("gulp-notify");
 var uglify = require("gulp-uglify");
 var concat = require("gulp-concat");
 
-gulp.task("default", ['scripts','js'], function(){
-  browserSync.init({proxy:"http://127.0.0.1:3100/"});
+gulp.task("default", ['html','sass','scripts','js'], function(){
   gulp.watch(["src/*.html","src/**/*.html"],["html"]);
   gulp.watch(["src/scss/*.scss", "src/scss/**/*.scss"],["sass"]);
   gulp.watch(["src/js/*.js","src/js/**/*.js"],["js"]);
+  browserSync.init({proxy:"http://127.0.0.1:3100/"});
 });
 
 gulp.task("html",function(){
   gulp.src('./src/index.html')
       .pipe(htmlImport('src/components/'))
-      .pipe(gulp.dest('dist'));
+      .pipe(gulp.dest('dist'))
+      .pipe(browserSync.stream());
 });
 
 gulp.task("sass",function(){
