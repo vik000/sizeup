@@ -1,0 +1,20 @@
+header.header{
+  display: inline-block;
+  width: 100vw;
+  text-align: center;
+  padding: 10px;
+}
+
+p.title{
+  font-size: 24px;
+  font-weight: bold;
+  color: $fonts-main;
+}
+
+div.sorting-bar{
+  text-align: center;
+  height: 50px;
+  margin: 0 auto;
+  padding: 10px;
+  color: $fonts-primary;
+}

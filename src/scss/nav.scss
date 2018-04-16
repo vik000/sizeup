@@ -1,0 +1,35 @@
+div.phone-nav{
+  @media screen and (min-width: $break-small){
+    display: none;
+  }
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  z-index: 1;
+  width: 100%;
+  background-color: $background-color;
+}
+
+ul.nav-menu{
+  list-style: none;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li.nav-item{
+  width: 20vw;
+  display: inline-block;
+}
+
+p.icon-tit{
+  font-size: 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+a.nav-link{
+  text-align: center;
+}
