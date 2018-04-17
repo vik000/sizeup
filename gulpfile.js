@@ -22,6 +22,10 @@ gulp.task("html",function(){
       .pipe(htmlImport('src/components/'))
       .pipe(gulp.dest('dist'))
       .pipe(browserSync.stream());
+  gulp.src('./src/main.html')
+      .pipe(htmlImport('src/components/'))
+      .pipe(gulp.dest('dist'))
+      .pipe(browserSync.stream());
 });
 
 gulp.task("sass",function(){
