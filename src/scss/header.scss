@@ -1,9 +1,32 @@
 header.header{
-  display: inline-block;
-  width: 100vw;
-  text-align: center;
+  background-color: $background-color;
+  height: 70px;
+  width: 90%;
+  text-align: left;
+  margin-left: 40px;
   padding: 10px;
+  p.title{
+    display: inline;
+    margin-right: 20px;
+  }
+  @media screen and (max-width: $break-small){
+    text-align: center;
+  }
 }
+
+nav.top-menu{
+  display: inline;
+  width: 200px;
+  text-align: right;
+  li.nav-item{
+    margin: 0;
+    width: 70px;
+  }
+  @media screen and (max-width: $break-small){
+    display: none;
+  }
+}
+
 
 p.title{
   font-size: 24px;

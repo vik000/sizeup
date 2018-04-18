@@ -5,56 +5,76 @@
 </head>
 <body>
   @import "header.html"
-
-  <div class="row movie-detail-row">
-    <div class="col-md-6 movie-detail-poster">
-      <img alt="movie poster" class="detail-poster-img" src="https://ia.media-imdb.com/images/M/MV5BYjQ0ZWJkYjMtYjJmYS00MjJiLTg3NTYtMmIzN2E2Y2YwZmUyXkEyXkFqcGdeQXVyNjk5NDA3OTk@._V1_SY1000_SX675_AL_.jpg">
-      <div class="detail-poster-actions">
-        <h3 class="movie-rating">
-          <p id="rating">8.5</p>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star-half"></i>
-        </h3>
-        <div class="detail-poster-actions-button-wrap">
-          <button class="btn btn-success">Añadir a una lista</button>
-          <button class="btn btn-success">Recomendar</button>
-          <button class="btn btn-success">Escribir sinposis</button>
-          <button class="btn btn-success">Evaluar</button>
+  <div class="container-fluid">
+    <div class="row movie-detail-row">
+      <div class="col-md-6 movie-detail-poster">
+        <img alt="movie poster" class="detail-poster-img" src="https://ia.media-imdb.com/images/M/MV5BYjQ0ZWJkYjMtYjJmYS00MjJiLTg3NTYtMmIzN2E2Y2YwZmUyXkEyXkFqcGdeQXVyNjk5NDA3OTk@._V1_SY1000_SX675_AL_.jpg">
+        <div class="detail-poster-actions">
+          <h3 class="movie-rating">
+            <p id="rating">8.5</p>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half"></i>
+          </h3>
+          <div class="shadow"></div>
+          <div class="shadow"></div>
+          <div class="shadow"></div>
+          <div class="shadow"></div>
+          <div class="detail-poster-actions-button-wrap">
+            <button class="btn btn-success"><i class="fas fa-plus"></i></button>
+            <button class="btn btn-success"><i class="fas fa-bullhorn"></i></button>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-6">
-      <h1 class="movie-detail-title">The Greatest Showman</h1>
-      <ul class="genre-tag">
-        <li class="genre-tag-li"><a href="" class="btn btn-primary genre-tag-a">Comedia</a></li>
-        <li class="genre-tag-li"><a href="" class="btn btn-primary genre-tag-a">Drama</a></li>
-        <li class="genre-tag-li"><a href="" class="btn btn-primary genre-tag-a">Musical</a></li>
-      </ul>
-      <div class="ficha-peli">
-        <ul class="ficha-peli-ul">
-          <li id="ficha-peli-director-year">Director de la peli, 2017</li>
-          <li id="ficha-peli-actores">Hugh Jackman, Rebecca Ferguson, Zac Efron</li>
+      <div class="col-md-6 movie-detail-data">
+        <h1 class="movie-detail-title">The Greatest Showman</h1>
+        <ul class="genre-tag">
+          <li class="genre-tag-li"><a href="" class="btn btn-primary genre-tag-a">Comedia</a></li>
+          <li class="genre-tag-li"><a href="" class="btn btn-primary genre-tag-a">Drama</a></li>
+          <li class="genre-tag-li"><a href="" class="btn btn-primary genre-tag-a">Musical</a></li>
         </ul>
-      </div>
-      <div class="sinopsis">
-        <div class="arrow-left"><i class="fas fa-arrow-circle-left"></i></div>
-        <div class="sinopsis-text-box">
-          <p id="sinopsis-text">
-            The movie begins with P. T. Barnum and his troupe performing a show at the circus ("The Greatest Show"). As the song continues, the background turns to black, with Barnum singing alone, leading to a flashback to Barnum's childhood where he and his father Philo, a tailor, work for the Hallett family, and he becomes infatuated with their daughter, Charity. Though Charity is being sent to finishing school, Barnum reassures her they will not be separated. The two keep in touch through letters until they meet again in adulthood ("A Million Dreams"), eventually marrying and raising two daughters, Caroline and Helen, in New York City ("A Million Dreams" reprise). They live a humble life; though Charity is happy, Barnum dreams of more.
-          </p>
-          <p id="id-author"><a href="">@Victor</a></p>
+        <div class="ficha-peli">
+          <ul class="ficha-peli-ul">
+            <li id="ficha-peli-director-year">Director de la peli, 2017</li>
+            <li id="ficha-peli-actores">Hugh Jackman, Rebecca Ferguson, Zac Efron</li>
+          </ul>
         </div>
-        <div class="arrow-right"><i class="fas fa-arrow-circle-right"></i></div>
-      </div>
-      <h2 id="recommendation-title">@Author recomienda:</h2>
-      <div class="row-fluid others-recommed">
-        <div class="recommendation col-md-3">1</div>
-        <div class="recommendation col-md-3">2</div>
-        <div class="recommendation col-md-3">3</div>
-        <div class="recommendation col-md-3">4</div>
+        <div class="sinopsis">
+          <div class="arrow-left"><i class="fas fa-arrow-circle-left"></i></div>
+          <div class="sinopsis-text-box">
+            <p id="sinopsis-text">
+              The movie begins with P. T. Barnum and his troupe performing a show at the circus ("The Greatest Show"). As the song continues, the background turns to black, with Barnum singing alone, leading to a flashback to Barnum's childhood where he and his father Philo, a tailor, work for the Hallett family, and he becomes infatuated with their daughter, Charity. Though Charity is being sent to finishing school, Barnum reassures her they will not be separated. The two keep in touch through letters until they meet again in adulthood ("A Million Dreams"), eventually marrying and raising two daughters, Caroline and Helen, in New York City ("A Million Dreams" reprise). They live a humble life; though Charity is happy, Barnum dreams of more.
+            </p>
+            <p id="id-author"><a href="">@Victor</a></p>
+          </div>
+          <div class="arrow-right"><i class="fas fa-arrow-circle-right"></i></div>
+        </div>
+        <h2 id="recommendation-title">@Author recomienda:</h2>
+        <div class="row-fluid others-recommend">
+          <div class="recommendation col-md-3">
+            <a class="poster-recommendation-link" href="" >
+              <img class="poster-recommendation" src="https://ia.media-imdb.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SY1000_CR0,0,674,1000_AL_.jpg" alt="">
+            </a>
+          </div>
+          <div class="recommendation col-md-3">
+            <a class="poster-recommendation-link" href="">
+              <img src="https://ia.media-imdb.com/images/M/MV5BMzUzNDM2NzM2MV5BMl5BanBnXkFtZTgwNTM3NTg4OTE@._V1_SY1000_SX675_AL_.jpg" alt="" class="poster-recommendation">
+            </a>
+          </div>
+          <div class="recommendation col-md-3">
+            <a class="poster-recommendation-link" href="" >
+              <img class="poster-recommendation" src="https://ia.media-imdb.com/images/M/MV5BNGNiNWQ5M2MtNGI0OC00MDA2LWI5NzEtMmZiYjVjMDEyOWYzXkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_SY1000_CR0,0,674,1000_AL_.jpg" alt="">
+            </a>
+          </div>
+          <div class="recommendation col-md-3">
+            <a class="poster-recommendation-link" href="" >
+              <img class="poster-recommendation" src="https://ia.media-imdb.com/images/M/MV5BMTAxNDkxODIyMDZeQTJeQWpwZ15BbWU4MDQ2Mjg4NDIy._V1_SY1000_CR0,0,674,1000_AL_.jpg" alt="">
+            </a>
+          </div>
+        </div>
+        <button id="comment-plot" class="btn btn-success">Escribir sinposis</button>
       </div>
     </div>
   </div>

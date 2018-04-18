@@ -1,21 +1,51 @@
 // POSTER
 div.movie-detail-poster{
   height:100%;
+  margin: 0;
+  padding: 0;
+}
+
+div.shadow{
+  box-shadow: inset 0 0 90px #000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  botom:0;
+  left:0;
+  right: 0;
+  top:0;
+  z-index: 8;
+}
+
+div.movie-detail-data{
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 img.detail-poster-img{
   width:100%;
+  margin: 0;
+  padding: 0;
   position: relative;
-
 }
 
 div.detail-poster-actions{
-  background-color: rgba(10,10,10,0.8);
+  background-color: rgba(10,10,10,0.6);
   position: absolute;
   width: 100%;
   height:100%;
   bottom: 0;
   right: 0;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.4s;
+  @media screen and(max-width: $break-small){
+    background-color: rgba(10,10,10,0.7);
+  }
+}
+div.detail-poster-actions:hover{
+  background-color: rgba(10,10,10,0.8);
 }
 
 div.detail-poster-actions-button-wrap{
@@ -23,10 +53,31 @@ div.detail-poster-actions-button-wrap{
   display: inline-block;
   bottom: 0;
   width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0,0,0,0);
   text-align: center;
+  transition: transform 0.4s;
   button{
-    margin: 10px;
-    height: 40px;
+    margin: 0 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear, opacity 0.2s linear;
+    :first-child{
+      font-size: 2em;
+    }
+  }
+}
+
+button.btn.btn-success{
+  position: relative;
+  margin-top: 70%;
+}
+
+div.detail-poster-actions-button-wrap:hover{
+  button{
+    visibility: visible;
+    opacity: 1;
   }
 }
 
@@ -36,6 +87,7 @@ h3.movie-rating{
   position: absolute;
   top: 10px;
   left: 50px;
+  z-index: 9;
   :first-child{
     padding-right: 10px;
     display: inline;
@@ -48,6 +100,11 @@ h1.movie-detail-title{
   color: $fonts-primary;
   margin-left: 0px;
   font-size: 3em;
+  margin-left: 40px;
+  @media screen and (max-width: $break-small){
+    text-align: center;
+    margin-left: 0;
+  }
 }
 
 // GENRES
@@ -62,13 +119,24 @@ ul.genre-tag{
   padding: 1px 5px;
   font-weight: bold;
   }
+  @media screen and (max-width: $break-small){
+    text-align: center;
+    padding: 0;
+  }
 }
 
 //SINOPSIS
+div.ficha-peli{
+  color: $fonts-secondary;
+  .ficha-peli-ul{
+    list-style: none;
+  }
+}
+
 div.sinopsis{
   display: flex;
   flex-direction: row;
-  
+  color: $fonts-primary;
 }
 div.arrow-left, div.arrow-right{
   font-size: 34px;
@@ -76,12 +144,33 @@ div.arrow-left, div.arrow-right{
   flex-direction: column;
   justify-content: center;
   margin: 5px;
+  color: $dark-grey !important;
   :hover{
     color: $fonts-primary;
   }
 }
 
-div.movie-detail-row{
+.movie-detail-row{
   max-width: 100%;
-  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+h2#recommendation-title{
+  font-size: 1.2em;
+  color: $fonts-primary;
+}
+
+div.others-recommend{
+  display: flex;
+  flex-wrap: wrap;
+  img.poster-recommendation{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+button#comment-plot{
+  margin-top: 40px;
+  margin-left: 20px;
 }
