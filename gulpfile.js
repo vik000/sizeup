@@ -50,7 +50,10 @@ gulp.task("scripts",function(){
 });
 
 gulp.task("js",function(){
-  gulp.src("src/js/main.js")
+  gulp.src([
+    "src/js/main.js",
+    "src/js/*.js"
+  ])
     .pipe(tap(function(file){ //tenemos que usar tap para poder hacer funciones en cadena.
       //ahora vamos a reemplazar main.js por lo que nos devuelva browserify cuando le pasemos main.js (es decir, lo modifica)
       file.contents = browserify(file.path, {debug:true})

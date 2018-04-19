@@ -1,0 +1,110 @@
+div.wrap-login{
+
+}
+
+div.clickable-background{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: $dark-veil;
+  z-index: 100;
+  top: 0;
+}
+
+div.login-card{
+  background-color: $white-back;
+  position: fixed;
+  left: calc(50% - 150px);
+  top:10%;
+  height: 300px;
+  width: 300px;
+  border-radius: 2%;
+  box-shadow: 5px;
+  z-index: 110;
+}
+
+h1.login-title{
+  color: $fonts-main;
+  font-weight: 200;
+  position: relative;
+  margin-top: 10px;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  border-bottom: solid 0.5px;
+  padding-bottom: 10px;
+}
+
+div.login-form-container{
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+form.login-form {
+  position: absolute;
+  text-align: justify;
+  padding: 15px;
+  height: 100%;
+}
+
+input.login-input{
+  margin-top: 20px;
+}
+
+input.login-input{
+  border: none;
+  border-bottom: solid 1px rgba(200,200,200,0.2);
+  background-color: rgba(0,0,0,0);
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.register{
+  bottom: 120px;
+  position: absolute;
+  display: inline;
+  font-size: 14px;
+  a{
+    padding-left: 8px;
+  }
+}
+
+button.form-button{
+  position: absolute;
+  bottom:76px;
+  height: 50px;
+}
+
+button.submit{
+    border-radius: 0 0 0 6%;
+    left:0;
+    width: 60%;
+}
+
+button.remember-me{
+  position: absolute;
+  right: 0;
+  border-radius: 0 0 6% 0;
+  width: 40%;
+  :hover{
+    background-color: green;
+  }
+}
+.button-selected{
+  background-color: $success-color;
+  color: white;
+}
+
+button.remember-me:hover{
+  background-color: $fonts-main;
+  color: white;
+}
+
+button:hover{
+  font-weight: bold;
+}
