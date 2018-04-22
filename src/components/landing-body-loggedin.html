@@ -1,8 +1,35 @@
-
-<div class="page page-first" style="height:200vh;">
+<div id="page1" class="page page-first" ontouchstart="p1handleTouchStart(event)" ontouchmove="p1handleTouchMove(event)" ontouchend="p1handleTouchEnd(event)" style="height:200vh;">
  <span class="page-content">page 1</span>
 </div>
 
-<div class="page page-second" style="height:200vh;">
+<div id="page2" class="page page-second" ontouchstart="p2handleTouchStart(event)" ontouchmove="p2handleTouchMove(event)" ontouchend="p2handleTouchEnd(event)" style="height:200vh;">
   <span class="page-content">page 2</span>
 </div>
+
+<script type="text/javascript">
+var p1 = document.getElementById('page1');
+var p2 = document.getElementById('page2');
+var startingX;
+
+function p1handleTouchStart(evt){
+  startingX = evt.touches[0].clientX;
+  console.log(startingX);
+}
+function p1handleTouchMove(evt){
+  var touch = evt.touches[0];
+  var change = startingX - touch.clientX;
+  console.log(touch, change);
+  if (change < 0){
+    return;
+  }
+  p1.style.left = '-' + change + 'px';
+  p2.style.display = 'block';
+  p2.style.left = (screen.width - change) +'px !important';
+  evt.preventDefault();
+}
+function p1handleTouchEnd(evt){
+  var change = startingX - evt.changedTouches[0].clientX;
+  console.log(change);
+  console.log('end! :-)');
+}
+</script>
