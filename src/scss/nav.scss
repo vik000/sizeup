@@ -3,10 +3,11 @@ div.phone-nav{
     display: none;
   }
   position: fixed;
-  bottom: 0;
+  width: 100vw;
+  top: calc(100vh - 40px);
+  left: 0;
   height: 40px;
   z-index: 1000;
-  width: 100%;
   background-color: $background-color;
 }
 

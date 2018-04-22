@@ -1,16 +1,22 @@
 header.header{
+  position: sticky;
+  top: 0;
+  left:0;
+  z-index: 20;
   background-color: $background-color;
   height: 70px;
-  width: 90%;
+  width: 100vw;
   text-align: left;
-  margin-left: 40px;
+  margin-left: 0;
   padding: 10px;
   p.title{
     display: inline;
-    margin-right: 20px;
   }
   @media screen and (max-width: $break-small){
     text-align: center;
+    position: fixed;
+    box-sizing: border-box;
+    display: block;
   }
 }
 
