@@ -31,7 +31,7 @@ function p1handleTouchEnd(evt){
   var change = startingX - evt.changedTouches[0].clientX;
   var threshold = screen.width / 3;
   if (change < threshold){
-    p1.style.left = 0;
+    p1.style.left = '0';
     p2.style.left = '100%';
     p2.style.display = 'none';
   }else{
@@ -45,4 +45,40 @@ function p1handleTouchEnd(evt){
   console.log(threshold);
   console.log('end! :-)');
 }
+
+function p2handleTouchStart(evt){
+  startingX = evt.touches[0];
+  p1.style.transition = '';
+  p2.style.transition = '';
+  p1.style.display = 'none';
+}
+
+function p2handleTouchMove(evt){
+  var touch = evt.touches[0];
+  var change = touch.clientX - startingX;
+  if (change < 0){
+    return;
+  }
+  p1.style.display = 'block';
+  p1.style.left = (change - screen.width/3) +'px';
+  p2.style. left = change + 'px';
+  evt.preventDefault();
+}
+
+function p2handleTouchEnd(evt){
+  var change = evt.changedTouches[0].clientX - startingX;
+  var threshold = screen.width/4;
+  if (change < threshold){
+    p1.style.left = '-100%';
+    p1.style.display = 'none';
+    p2.style.left = '0';
+  } else {
+    p1.style.transition = 'all .3s';
+    p2.style.transition = 'all .3s';
+    p1.style.left = '0';
+    p2.style.left = '100%';
+  }
+}
+
+
 </script>
