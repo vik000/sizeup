@@ -12,9 +12,20 @@
 @import 'nav';
 
 //modules:
+html{
+  position: absolute;
+  height: 100%;
+}
+
 body {
   background-color: $background-color;
 }
+
+body{
+  height: 100%;
+  overflow: auto;
+}
+
 @import 'landing';
 @import 'movie-detail';
 @import 'tooltip';
@@ -23,4 +34,8 @@ body {
 
 .hidden{
   display: none;
+}
+
+.fixed{
+  position: absolute;
 }
