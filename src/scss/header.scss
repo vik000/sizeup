@@ -1,5 +1,5 @@
-header.header{
-  position: sticky;
+header#header{
+  position: fixed;
   top: 0;
   left:0;
   z-index: 20;
@@ -13,17 +13,30 @@ header.header{
     display: inline;
   }
   @media screen and (max-width: $break-small){
+    top:0;
+    // background-color: green;
     text-align: center;
     position: fixed;
     box-sizing: border-box;
-    display: block;
+    display:inline-block;
   }
+}
+
+svg.logo{
+  height: 60px;
+  padding-bottom: 10px;
+}
+
+.logo-path{
+  fill:$white-back;
 }
 
 nav.top-menu{
   display: inline;
+  position: relative;
   width: 200px;
   text-align: right;
+  bottom: 25px;
   li.nav-item{
     margin: 0;
     width: 70px;

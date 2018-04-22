@@ -1,14 +1,17 @@
 div.phone-nav{
   @media screen and (min-width: $break-small){
     display: none;
+    position: fixed;
   }
   position: fixed;
   width: 100vw;
   top: calc(100vh - 40px);
   left: 0;
+  bottom: 0;
   height: 40px;
   z-index: 1000;
   background-color: $background-color;
+  -webkit-transform: translateZ(0) !important;
 }
 
 ul.nav-menu{
