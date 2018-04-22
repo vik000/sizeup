@@ -1,5 +1,7 @@
 <div id="page1" class="page page-first" ontouchstart="p1handleTouchStart(event)" ontouchmove="p1handleTouchMove(event)" ontouchend="p1handleTouchEnd(event)" style="height:200vh;">
- <span class="page-content">page 1</span>
+ <div class="contenedor">
+
+ </div>
 </div>
 
 <div id="page2" class="page page-second" ontouchstart="p2handleTouchStart(event)" ontouchmove="p2handleTouchMove(event)" ontouchend="p2handleTouchEnd(event)" style="height:200vh;">
@@ -7,78 +9,98 @@
 </div>
 
 <script type="text/javascript">
-var p1 = document.getElementById('page1');
-var p2 = document.getElementById('page2');
-var startingX;
+  var p1 = document.getElementById('page1');
+  var p2 = document.getElementById('page2');
+  var startingX;
 
-function p1handleTouchStart(evt){
-  startingX = evt.touches[0].clientX;
-  console.log(startingX);
-}
-function p1handleTouchMove(evt){
-  var touch = evt.touches[0];
-  var change = startingX - touch.clientX;
-  console.log(touch, change);
-  if (change < 0){
-    return;
+  function p1handleTouchStart(evt){
+    startingX = evt.touches[0].clientX;
+    // console.log('startingX: ' + startingX);
   }
-  p1.style.left = '-' + change + 'px';
-  p2.style.display = 'block !important';
-  p2.style.left = (screen.width - change) +'px';
-  evt.preventDefault();
-}
-function p1handleTouchEnd(evt){
-  var change = startingX - evt.changedTouches[0].clientX;
-  var threshold = screen.width / 3;
-  if (change < threshold){
-    p1.style.left = '0';
-    p2.style.left = '100%';
-    p2.style.display = 'none';
-  }else{
-    p1.style.transition = 'all .3s';
-    p2.style.transition = 'all .3s';
-    p1.style.left = '-100%';
-    p2.style.left = '0';
+  function p1handleTouchMove(evt){
+    var touch = evt.touches[0];
+    var change = startingX - touch.clientX;
+    // console.log(touch, change);
+    if (change < 0){
+      return;
+    }
+    p1.style.left = '-' + change + 'px';
     p2.style.display = 'block';
+    p2.style.left = (screen.width - change) +'px';
+    evt.preventDefault();
   }
-  console.log(change);
-  console.log(threshold);
-  console.log('end! :-)');
-}
-
-function p2handleTouchStart(evt){
-  startingX = evt.touches[0];
-  p1.style.transition = '';
-  p2.style.transition = '';
-  p1.style.display = 'none';
-}
-
-function p2handleTouchMove(evt){
-  var touch = evt.touches[0];
-  var change = touch.clientX - startingX;
-  if (change < 0){
-    return;
+  function p1handleTouchEnd(evt){
+    var change = startingX - evt.changedTouches[0].clientX;
+    var threshold = screen.width / 3;
+    if (change < threshold){
+      p1.style.left = '0';
+      p2.style.left = '100%';
+      p2.style.display = 'none';
+    }else{
+      p1.style.transition = 'all .3s';
+      p2.style.transition = 'all .3s';
+      p1.style.left = '-100vw';
+      // console.log('ok!');
+      p2.style.left = '0';
+      p2.style.display = 'block';
+      // console.log('p1 left = ' + p1.style.left);
+    }
+    // console.log('change: ' + change);
+    // console.log('threshold: ' + threshold);
+    // console.log('end! :-)');
+    // console.log('p1 left again = ' + p1.style.left);
   }
-  p1.style.display = 'block';
-  p1.style.left = (change - screen.width/3) +'px';
-  p2.style. left = change + 'px';
-  evt.preventDefault();
-}
 
-function p2handleTouchEnd(evt){
-  var change = evt.changedTouches[0].clientX - startingX;
-  var threshold = screen.width/4;
-  if (change < threshold){
-    p1.style.left = '-100%';
+  function p2handleTouchStart(evt){
+    console.log('touch start p2!');
+    startingX = evt.touches[0].clientX;
+    p1.style.transition = '';
+    p2.style.transition = '';
     p1.style.display = 'none';
-    p2.style.left = '0';
-  } else {
-    p1.style.transition = 'all .3s';
-    p2.style.transition = 'all .3s';
-    p1.style.left = '0';
-    p2.style.left = '100%';
+    console.log('startingX: ' + startingX);
   }
-}
 
+  function p2handleTouchMove(evt){
+    console.log('start move!');
+    var touch = evt.touches[0];
+    var change = touch.clientX - startingX;
+    if (change < 0){
+      return;
+    }
+    p1.style.display = 'block';
+    p1.style.left = (change - screen.width) +'px';
+    p2.style.left = change + 'px';
+    evt.preventDefault();
+    console.log('change: ' + change );
+  }
 
+  function p2handleTouchEnd(evt){
+    var change = evt.changedTouches[0].clientX - startingX;
+    var half = screen.width/3;
+    console.log('change required = ' + half);
+    if (change < half){
+      console.log("NO TRANSITION :(");
+      p1.style.left = '-100%';
+      p1.style.display = 'none';
+      p2.style.left = '0';
+    } else {
+      console.log('TRANSITION!!!!---------------------------');
+      p1.style.transition = 'all .3s';
+      p2.style.transition = 'all .3s';
+      p1.style.left = '0';
+      p2.style.left = '100vw'; //si pongo 100% no me lo mueve, si pongo vw me jode el fixed position...
+    }
+    setTimeout(function(){
+      if (p2.style.left == '100vw'){
+        p2.style.left = '100%';
+        console.log("conversion!");
+        alert('se jodió!')
+      }
+    },3000);
+    console.log('end :)');
+    console.log('p1 left:'+p1.style.left);
+    console.log('p1 width:'+p1.style.width);
+    console.log('p2 left:'+p2.style.left);
+    console.log('p2 width:'+p2.style.width);
+  };
 </script>
