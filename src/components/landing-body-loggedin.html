@@ -23,13 +23,26 @@ function p1handleTouchMove(evt){
     return;
   }
   p1.style.left = '-' + change + 'px';
-  p2.style.display = 'block';
-  p2.style.left = (screen.width - change) +'px !important';
+  p2.style.display = 'block !important';
+  p2.style.left = (screen.width - change) +'px';
   evt.preventDefault();
 }
 function p1handleTouchEnd(evt){
   var change = startingX - evt.changedTouches[0].clientX;
+  var threshold = screen.width / 3;
+  if (change < threshold){
+    p1.style.left = 0;
+    p2.style.left = '100%';
+    p2.style.display = 'none';
+  }else{
+    p1.style.transition = 'all .3s';
+    p2.style.transition = 'all .3s';
+    p1.style.left = '-100%';
+    p2.style.left = '0';
+    p2.style.display = 'block';
+  }
   console.log(change);
+  console.log(threshold);
   console.log('end! :-)');
 }
 </script>
